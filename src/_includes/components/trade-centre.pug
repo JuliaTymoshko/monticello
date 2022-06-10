@@ -1,0 +1,15 @@
+mixin trade-centre()
+  .container.panel
+    .panel__content 
+      .panel__rectangle
+      .panel__picture 
+        img(src="./../../assets/img/trade-center-pic.jpg" alt="trade center")
+      .panel__info
+        .panel__subtitle One World
+        .panel__title Trade Center
+        p.panel__text Increasing prosperity in our lives can be accomplished by having the right frame of mind. The truth is, our thoughts are very powerful.
+        +button({text:'More datails', type: "Submit"})(class='button panel__button')
+        .panel__address
+          i.fa-solid.fa-location-dot
+          a(href="https://goo.gl/maps/gjQJswqoRLa7rVk49" target="_blank")
+            span New York City, United States - 1776 feet

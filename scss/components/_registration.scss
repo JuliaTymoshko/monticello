@@ -1,0 +1,88 @@
+.c-form {
+  max-width: 750px;
+  min-height: 450px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 60px 50px;
+  filter: $bs-form;
+  margin-bottom: 20px;
+  color: $c-black-text;
+
+  &__title {
+    text-align: center;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    font-size: $fs-h2;
+
+    @media (max-width: $bp-tablet) {
+      margin-bottom: 30px;
+      font-size: $fs-h3;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: $bp-tablet) {
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+  }
+
+  &__content {
+    @include flexColumn;
+    align-items: flex-start;
+    gap: 40px;
+    font-size: $fs-text;
+
+    i {
+      color: $c-violet;
+      margin-right: 10px;
+    }
+
+    @media (max-width: $bp-phone) {
+      font-size: $fs-address;
+    }
+  }
+
+  &__inputs {
+    @include flexColumn;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 0 5px 15px 5px; // ! стили для первого элемента
+  }
+
+  &__button {
+    margin-top: 20px;
+  }
+
+  .error {
+    border-bottom: 1px solid rgb(255, 0, 0);
+  }
+
+  &__input {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgb(194, 194, 194);
+    padding: 15px 5px;
+    min-width: 310px;
+
+    @media (max-width: $bp-phone) {
+      min-width: 240px;
+    }
+
+    &:focus {
+      border-bottom: 1px solid $c-black;
+    }
+  }
+
+  &__error {
+    color: $c-violet;
+    font-size: 12px;
+    font-weight: $fw-bold;
+    padding: 5px 0 0 0;
+    opacity: 0.6;
+  }
+}

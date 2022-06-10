@@ -1,0 +1,32 @@
+mixin header()
+  header.c-header
+    .c-header__wrapper.container
+      .c-header__logo 
+        img(src="./../../assets/icons/logo.svg" alt="logo")
+      nav.c-header__navigation.navigation
+        li.navigation__item
+          a(href="#what-we-do").navigation__link 
+            span.circle
+            span About us 
+        li.navigation__item
+          a(href="#gallery").navigation__link 
+            span.circle
+            span Projects
+        li.navigation__item
+          a(href="#news").navigation__link 
+            span.circle
+            span News
+        li.navigation__item
+          a(href="#js-map").navigation__link 
+            span.circle
+            span Contact
+      .c-header__contatcs 
+        a(href="#")
+          span.icon__border
+            i.fa-brands.fa-facebook-f
+        a(href="#")
+          span.icon__border
+            i.fa-brands.fa-twitter
+        a(href="#")
+          span.icon__border
+            i.fa-brands.fa-instagram

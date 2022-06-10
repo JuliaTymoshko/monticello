@@ -1,0 +1,100 @@
+.panel {
+  color: $c-black-text;
+  margin-bottom: 200px;
+
+  @media (max-width: $bp-desktop) {
+    margin-bottom: 100px;
+  }
+
+  @media (max-width: $bp-tablet) {
+    margin-bottom: 70px;
+  }
+
+  &__heading {
+    text-transform: uppercase;
+    margin-bottom: 120px;
+    text-align: center;
+    font-size: $fs-h2;
+    color: $c-black-text;
+
+    @media (max-width: $bp-desktop) {
+      margin-bottom: 60px;
+    }
+
+    @media (max-width: $bp-tablet) {
+      margin-bottom: 30px;
+      font-size: $fs-h3;
+    }
+  }
+
+  &__content {
+    color: $c-black-text;
+    @include flexRow;
+    align-items: flex-end;
+    gap: 70px;
+
+    @media (max-width: $bp-desktop) {
+      align-items: flex-start;
+    }
+
+    @media (max-width: $bp-tablet) {
+      flex-direction: column;
+      align-items: center;
+      gap: 50px;
+    }
+  }
+
+  &__picture {
+    max-height: 470px;
+    max-width: 630px;
+  }
+
+  &__subtitle {
+    text-transform: uppercase;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-weight: $fw-bold;
+    margin-bottom: 20px;
+    font-size: $fs-h2;
+
+    @media (max-width: $bp-tablet) {
+      margin-bottom: 30px;
+      font-size: $fs-h3;
+    }
+  }
+
+  &__text {
+    font-family: $f-openSans;
+    margin-bottom: 40px;
+    font-size: $fs-text;
+    line-height: 32px;
+    max-width: 470px;
+
+    @media (max-width: $bp-tablet) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__button {
+    margin-bottom: 60px;
+
+    @media (max-width: $bp-tablet) {
+      margin-bottom: 30px;
+    }
+  }
+
+  i {
+    color: $c-black-text;
+    margin-right: 10px;
+  }
+
+  &__address {
+    font-family: $f-openSans;
+    font-size: $fs-address;
+    font-style: italic;
+    line-height: 20px;
+    color: $c-black;
+  }
+}

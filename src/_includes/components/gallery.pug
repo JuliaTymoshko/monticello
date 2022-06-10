@@ -1,0 +1,15 @@
+mixin gallery()
+  section.c-gallery
+    .c-gallery__wrapper.container#gallery
+      +title-upline(class='upline')
+      h1.c-gallery__title Gallery
+      .c-gallery__gallery 
+        .c-gallery__main
+          img(class='c-gallery__mainitem' src="./../../assets/img/gallery1.jpg" alt="gallery image with projects sample")
+        .c-gallery__side
+          img(src="./../../assets/img/gallery2.jpg" alt="gallery image with projects sample")
+          img(src="./../../assets/img/gallery3.jpg" alt="gallery image with projects sample")
+          img(src="./../../assets/img/gallery4.jpg" alt="gallery image with projects sample")
+          img(src="./../../assets/img/gallery5.jpg" alt="gallery image with projects sample")
+      +button({text:'See more'})(class='button panel__button')
+

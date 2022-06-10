@@ -1,0 +1,34 @@
+mixin registration()
+  form(class="c-form" method="post" id="js-registration-form") 
+    +title-upline(class='upline')
+    h2.c-form__title Registration
+    .c-form__wrapper
+      .c-form__content
+        .c-form__item
+          i.fa-solid.fa-location-dot 
+          a(href="https://goo.gl/maps/61D4xgsvJ7GpRKAj8" target="_blank")  91 Nolan Extensions Suite 670
+        .c-form__item
+          i.fa-solid.fa-phone
+          a(href="tel:+001 356-868-2454" target="_blank")  +001 356-868-2454
+        .c-form__item
+          i.fa-solid.fa-inbox 
+          a(href="mailto:montichello@service.com" target="_blank")  montichello@service.com
+        .c-form__item
+          i.fa-solid.fa-clock 
+          span From 07:05AM to 19:30PM
+      .c-form__inputs
+        label.c-form__label 
+          input(class="c-form__input" type="text" name="firstName" id="js-registration-form-firstName" placeholder="First name")
+          .c-form__error(id="js-registration-form-firstName-error") Enter your name
+        label.c-form__label
+          input(class="c-form__input" type="text" name="lastName" id="js-registration-form-lastName" placeholder="Last name")
+          .c-form__error(id="js-registration-form-lastName-error") Enter your last name
+        label.c-form__label
+          input(class="c-form__input" type="text" name="email" id="js-registration-form-email" placeholder="Email")
+          .c-form__error(id="js-registration-form-email-error") Enter valid email address
+        label.c-form__label
+          input(class="c-form__input" type="text" name="username" id="js-registration-form-username" autocomplete="username" placeholder="Username")
+          .c-form__error(id="js-registration-form-username-error")  
+        label.c-form__label
+          input(class="c-form__input" type="password" name="password" id="js-registration-form-password" autocomplete="current-password" placeholder="Password")
+        +button({text:'REGISTER', type: "Submit"})(class='button c-form__button js-registration-button')

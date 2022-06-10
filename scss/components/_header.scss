@@ -1,0 +1,60 @@
+.c-header {
+  &__wrapper {
+    @include flexRow;
+    padding-top: 30px;
+    white-space: nowrap;
+    gap: 20px;
+    @include absolute;
+
+    @media (max-width: $bp-desktop) {
+      align-items: flex-start;
+    }
+  }
+
+  &__logo {
+    margin-right: 30px; // safety margin
+  }
+
+  &__navigation {
+    display: flex;
+    gap: 70px;
+    font-family: $f-sourceSansPro;
+
+    @media (max-width: $bp-desktop) {
+      gap: 30px;
+    }
+
+    @media (max-width: $bp-tablet) {
+      display: none;
+    }
+
+    a {
+      color: $c-white;
+    }
+  }
+
+  &__contatcs {
+    display: flex;
+    gap: 20px;
+
+    @media (max-width: $bp-desktop) {
+      flex-direction: column;
+    }
+
+    img {
+      min-width: 40px;
+    }
+  }
+
+  .navigation {
+    &__link {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .circle {
+      margin-right: 15px;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+mixin button(args)
+  - let type = args.type || 'button'
+  - let text = args.text || 'More datails'
+
+  button(type=type, class!=attributes.class)
+    span= text
+
+//- ! Usage +button({text:'More datails', type: "Submit"})(class='button panel__button')

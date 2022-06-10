@@ -1,0 +1,9 @@
+mixin banner()
+  section.c-banner
+    .c-banner__wrapper.container
+      img.c-banner__image(src="./../../assets/img/header-bg.jpg" alt="logo")
+      +header()
+      .c-banner__main
+        h1.c-banner__title SIMPLE & MODERN
+        .c-banner__subtitle WE MAKE THE WORLD BEAUTIFUL EVERYDAY
+      +arrow-button(class='icon__border c-banner__down' href='#what-we-do')

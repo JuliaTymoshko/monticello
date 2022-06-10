@@ -1,0 +1,21 @@
+mixin card(args)
+  .card
+    img.card__image(src= args.image alt="news image")
+    .card__wrapper
+      h4.card__title= args.title
+      p.card__description= args.description 
+      .card__footer
+        img.card__avatar(src= args.avatar alt="author avatar" )
+        .card__info
+          .card__author= args.author
+          .card__date= args.date
+
+//- ! Usage - передаем обьект ключ + значение строкой
+//- +card({ 
+//-             image: './../../assets/img/news-image-1.jpg',
+//-             title: 'SEE THE UNMATCHED BEAUTY OF THE GREAT.',
+//-             description: 'Free directories: directories are perfect for customers that are searching for...',
+//-             avatar: './../../assets/img/news-alja.jpg',
+//-             author: 'ALJA BRUN',
+//-             date: '20 Jan 2020'
+//-             })

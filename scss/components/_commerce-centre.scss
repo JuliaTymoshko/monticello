@@ -1,0 +1,29 @@
+.panel {
+  &__content {
+    &--reverse {
+      flex-direction: row-reverse;
+    }
+    @media (max-width: $bp-desktop) {
+      align-items: flex-start;
+    }
+
+    @media (max-width: $bp-tablet) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__rectangle--violet {
+    background-color: $c-violet;
+    position: absolute;
+    right: 0;
+    width: 585px;
+    height: 470px;
+    top: 800px;
+    z-index: -10;
+
+    @media (max-width: $bp-desktop) {
+      display: none;
+    }
+  }
+}

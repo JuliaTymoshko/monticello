@@ -1,0 +1,71 @@
+.c-news {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  color: $c-white;
+  margin-bottom: 70px;
+
+  &__wrapper {
+    @include flexColumn;
+    max-width: 100%;
+    justify-content: space-between;
+    min-height: 100vh;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  &__image {
+    z-index: -2;
+    height: 100%;
+    min-width: 100%;
+    @include absolute;
+    background-size: cover;
+    // overflow: hidden;
+  }
+
+  &__main {
+    margin-top: 130px;
+    position: relative;
+  }
+
+  &__title {
+    font-size: $fs-h2;
+    margin-bottom: 90px;
+
+    @media (max-width: $bp-tablet) {
+      font-size: $fs-h3;
+    }
+  }
+
+  &__carousel {
+    padding-bottom: 130px;
+  }
+
+  &__button {
+    position: absolute;
+    top: calc(50% - 20px);
+    left: -100px;
+    z-index: 100;
+    cursor: pointer;
+
+    &--right {
+      right: -100px;
+      left: auto;
+    }
+
+    @media (max-width: $bp-desktop) {
+      display: none;
+    }
+  }
+
+  &__pagination {
+    margin-bottom: 30px;
+  }
+}
+
+.swiper {
+  margin-bottom: 100px;
+}

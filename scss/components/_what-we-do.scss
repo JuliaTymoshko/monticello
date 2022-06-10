@@ -1,0 +1,12 @@
+.c-what-we-do {
+  margin-bottom: 140px;
+  position: relative;
+
+  @media (max-width: $bp-desktop) {
+    margin-bottom: 70px;
+  }
+
+  @media (max-width: $bp-tablet) {
+    margin-bottom: 40px;
+  }
+}

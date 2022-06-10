@@ -1,0 +1,15 @@
+.panel {
+  &__rectangle {
+    background-color: $c-blue;
+    position: absolute;
+    height: 470px;
+    width: 585px;
+    z-index: -10;
+    top: 140px;
+    left: 0;
+
+    @media (max-width: $bp-desktop) {
+      display: none;
+    }
+  }
+}

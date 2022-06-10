@@ -1,0 +1,26 @@
+include ../_includes/elements/index
+include ../_includes/components/index
+
+doctype html
+html(lang='en')
+	head
+		meta(charset='utf-8')
+		meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+		link(rel='stylesheet' href='https://unpkg.com/swiper@8/swiper-bundle.min.css')
+		link(rel='stylesheet' href='index.css')
+		script(defer async src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBbt0F3RGczTmbyVMMyFIVd8wxxFSpFRN0&region=EN&language=en&callback=initMap&v=weekly' ) 
+
+	block style
+	block title
+		title Template
+	body
+		//- include ../../assets/icons/common/symbol-defs.svg
+		.l-common
+			+banner() 
+			// * block это то, что в index.pug
+			block content
+			+footer()
+		script(src='./../../js/map.js') 
+		script(src='https://unpkg.com/swiper@8/swiper-bundle.min.js') 
+		script(src='https://kit.fontawesome.com/23872a65e8.js' crossorigin='anonymous') 
+		script(src='./index.js' type='module') 

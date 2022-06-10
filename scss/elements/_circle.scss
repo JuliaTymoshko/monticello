@@ -1,0 +1,13 @@
+.circle {
+  display: block;
+  width: 9px;
+  height: 9px;
+  border: 1px solid $c-white;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &--active,
+  &:hover {
+    background-color: $c-white;
+  }
+}

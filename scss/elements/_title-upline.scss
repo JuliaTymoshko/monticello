@@ -1,0 +1,13 @@
+.upline {
+  width: 100px;
+  display: flex;
+  margin: 0 auto 30px auto;
+  border: 1px solid;
+  border-color: $c-black-text;
+  background-color: $c-black-text;
+
+  &--white {
+    border-color: $c-white;
+    background-color: $c-white;
+  }
+}

@@ -1,0 +1,12 @@
+// swiper-pagination-bullet-active
+.swiper-custom {
+  // ! dots
+  .swiper-pagination-bullet {
+    border: 1px solid $c-white;
+    background: transparent;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: $c-white;
+  }
+}

@@ -1,0 +1,15 @@
+.button {
+  max-width: 190px;
+  max-height: 50px;
+  padding: 15px;
+  border: 1px solid $c-black-text;
+  outline: none;
+  background-color: $c-white;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

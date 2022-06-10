@@ -1,0 +1,48 @@
+mixin news()
+  section.c-news
+    .c-news__wrapper.container
+      img.c-news__image(src="./../../assets/img/news-bg.jpg" alt="background")
+      .c-news__main#news
+        +title-upline(class='upline upline--white')
+        h1.c-news__title LATEST NEWS
+        +arrow-button(class='icon__border icon__border--left c-news__button js-slider-button-prev')
+        .swiper.container.swiper-custom
+          .swiper-wrapper.c-news__carousel
+            .swiper-slide
+              +card({ 
+                image: './../../assets/img/news-image-1.jpg',
+                title: 'SEE THE UNMATCHED BEAUTY OF THE GREAT.',
+                description: 'Free directories: directories are perfect for customers that are searching for. Having a home based business is a wonderful asset to your life.',
+                avatar: './../../assets/img/news-alja.jpg',
+                author: 'ALJA BRUN',
+                date: '20 Jan 2020'
+                })
+            .swiper-slide
+              +card({ 
+                image: './../../assets/img/news-image-2.jpg',
+                title: 'EFFECTIVE ADVERTISING POINTERS.',
+                description: 'Having a home based business is a wonderful asset to your life. Free directories: directories are perfect for customers that are searching for.',
+                avatar: './../../assets/img/news-dominic.jpg',
+                author: 'DOMINIC FREEMAN',
+                date: '13 Dec 2019'
+                })
+            .swiper-slide
+              +card({ 
+                image: './../../assets/img/news-image-3.jpg',
+                title: 'HYPNOTIZE YOURSELF INTO THE GHOST.',
+                description: 'There are many things that are important to catalog design. Having a home based business is a wonderful asset to your life.',
+                avatar: './../../assets/img/news-alice.jpg',
+                author: 'ALICE WARD',
+                date: '30 Nov 2019'
+                })
+            .swiper-slide
+              +card({ 
+              image: './../../assets/img/news-image-4.jpg',
+              title: 'Just imagine what a magic going on.',
+              description: 'There are many things that are important to catalog design. Having a home based business is a wonderful asset to your life.',
+              avatar: './../../assets/img/news-dominic.jpg',
+              author: 'ALICE WARD',
+              date: '21 May 2022'
+              })
+          .swiper-pagination.c-news__pagination
+        +arrow-button(class='icon__border icon__border--right c-news__button c-news__button--right js-slider-button-next')

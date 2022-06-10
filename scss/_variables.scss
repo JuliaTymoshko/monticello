@@ -1,0 +1,32 @@
+// COLORS
+$c-black: #000;
+$c-black-text: #2c4058;
+$c-white: #ffffff;
+$c-blue: #55b7ff;
+$c-violet: #7e5aff;
+$c-icon-border: #afa5e3;
+
+// Fonts
+$f-montserrat: 'Montserrat', sans-serif;
+$f-openSans: 'Open Sans', sans-serif;
+$f-sourceSansPro: 'Source Sans Pro', sans-serif;
+
+// Font size
+$fs-address: 15px;
+$fs-base: 16px;
+$fs-text: 18px;
+$fs-h1: 80px;
+$fs-h2: 44px;
+$fs-h3: 34px;
+$fs-h4: 22px;
+
+// Font weight
+$fw-normal: 400;
+$fw-bold: 700;
+
+// Transition
+$t-normal: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+
+// Box Shadow
+$bs-normal: 3px 4px 7px rgba($c-black, 0.1);
+$bs-form: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));

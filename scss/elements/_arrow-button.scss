@@ -1,0 +1,31 @@
+.icon__border {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $c-icon-border;
+  border-radius: 50%;
+  padding: 2px;
+
+  &--right {
+    transform: rotate(-90deg);
+  }
+
+  &--left {
+    transform: rotate(90deg);
+  }
+
+  &--up {
+    transform: rotate(180deg);
+  }
+
+  &:hover {
+    border-color: $c-white;
+  }
+
+  i {
+    font-size: $fs-base;
+    color: $c-white;
+  }
+}
