@@ -1,9 +1,9 @@
-mixin header()
-  header.c-header
-    .c-header__wrapper.container
-      .c-header__logo 
-        img(src="./../../assets/icons/logo.svg" alt="logo")
-      nav.c-header__navigation.navigation
+mixin burger-menu()
+  section.c-burger-menu.animate__animated.animate__fadeInDown#js-burger-menu
+    .c-burger-menu__wrapper.container
+      +title-upline(class='upline upline--white')
+      h1.c-burger-menu__title Navigation
+      nav.c-burger-menu__navigation
         li.navigation__item
           a(href="#what-we-do").navigation__link 
             span.circle
@@ -20,14 +20,4 @@ mixin header()
           a(href="#js-map").navigation__link 
             span.circle
             span Contact
-      +burger
-      .c-header__contatcs 
-        a(href="#")
-          span.icon__border
-            i.fa-brands.fa-facebook-f
-        a(href="#")
-          span.icon__border
-            i.fa-brands.fa-twitter
-        a(href="#")
-          span.icon__border
-            i.fa-brands.fa-instagram
+

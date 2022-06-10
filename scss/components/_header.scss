@@ -1,10 +1,12 @@
 .c-header {
   &__wrapper {
     @include flexRow;
+    @include absolute;
     padding-top: 30px;
     white-space: nowrap;
     gap: 20px;
-    @include absolute;
+    border-radius: 0 0 10px 10px;
+    z-index: 100;
 
     @media (max-width: $bp-desktop) {
       align-items: flex-start;
@@ -13,6 +15,10 @@
 
   &__logo {
     margin-right: 30px; // safety margin
+
+    @media (max-width: $bp-phone) {
+      margin-right: 100px;
+    }
   }
 
   &__navigation {

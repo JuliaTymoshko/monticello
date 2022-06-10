@@ -1,0 +1,15 @@
+.c-burger {
+  display: none;
+  font-size: $fs-h3;
+  transform: rotate(90deg);
+  cursor: pointer;
+  padding: 10px 10px 10px 0;
+  position: absolute;
+  right: 60px;
+  top: 24px;
+  line-height: 1;
+
+  @media (max-width: $bp-tablet) {
+    display: block;
+  }
+}

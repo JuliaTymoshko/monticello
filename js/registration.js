@@ -1,43 +1,9 @@
+import { validateNames } from './validation.js';
+import { validateEmail } from './validation-email.js';
+import { toggleModal } from './modal-window.js';
+import { setError } from './set-error.js';
+
 const DOM = document;
-
-const setError = (id, error) => {
-  const el = DOM.getElementById(id);
-  error ? el.classList.add('error') : el.classList.remove('error');
-};
-
-// ! f валидации firstName и LastName
-const validateNames = (fieldName, fieldNameValue) => {
-  let isValidField = true;
-  let errorField = DOM.getElementById(
-    `js-registration-form-${fieldName}-error`
-  );
-
-  if (!fieldNameValue) {
-    errorField.innerText = 'Please type in smth';
-    isValidField = false;
-  } else if (fieldNameValue.length <= 1) {
-    errorField.innerText = 'Should be 1+ characters';
-    isValidField = false;
-  } else if (fieldNameValue.length >= 30) {
-    errorField.innerText = 'Should be less than 30 characters';
-    isValidField = false;
-  } else if (fieldNameValue.search(/\d/) != -1) {
-    errorField.innerText = 'No numbers allowed.';
-    isValidField = false;
-  } else if (fieldNameValue.search(/[\,\.\$\%\+\}\{\^\-\*\/\&]/) != -1) {
-    errorField.innerText = 'No special characters allowed.';
-    isValidField = false;
-  }
-  return isValidField;
-};
-
-// ! Toggle modal window
-const modalWindow = DOM.getElementById('js-registration-modal');
-function toggleModal() {
-  modalWindow.classList.toggle('hidden');
-}
-const closeButton = DOM.getElementById('js-registration-ok');
-closeButton.addEventListener('click', toggleModal);
 
 // ! Registration f start
 const registration = (e) => {
@@ -66,11 +32,13 @@ const registration = (e) => {
 
   let isFirstNameValid = validateNames('firstName', firstName);
   let isLastNameValid = validateNames('lastName', lastName);
+  let isEmailValid = validateEmail('email', email);
 
   // ! Проверка пустоты и валидности ДВУХ полей
   if (
     !isFirstNameValid ||
     !isLastNameValid ||
+    !isEmailValid ||
     email === '' ||
     username === '' ||
     password === ''
@@ -145,7 +113,8 @@ const registration = (e) => {
           'js-registration-notification'
         );
 
-        notificationArea.innerText = response.message['en'];
+        notificationArea.innerText =
+          response.message['en'] || 'Successfully registered!';
 
         toggleModal();
       }

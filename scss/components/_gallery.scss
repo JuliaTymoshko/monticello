@@ -31,14 +31,11 @@
   }
 
   &__main {
-    transition: $t-normal;
+    transition: $t-long;
+    transform-style: preserve-3d;
 
     &:hover {
-      transform: scaleX(-1);
-      -o-transform: scaleX(-1);
-      -ms-transform: scaleX(-1);
-      -moz-transform: scaleX(-1);
-      -webkit-transform: scaleX(-1);
+      transform: rotateY(180deg);
     }
   }
 

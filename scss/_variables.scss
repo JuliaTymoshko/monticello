@@ -12,7 +12,8 @@ $f-openSans: 'Open Sans', sans-serif;
 $f-sourceSansPro: 'Source Sans Pro', sans-serif;
 
 // Font size
-$fs-address: 15px;
+$fs-small: 12px;
+$fs-address: 14px;
 $fs-base: 16px;
 $fs-text: 18px;
 $fs-h1: 80px;
@@ -26,6 +27,7 @@ $fw-bold: 700;
 
 // Transition
 $t-normal: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+$t-long: transform 0.6s;
 
 // Box Shadow
 $bs-normal: 3px 4px 7px rgba($c-black, 0.1);
