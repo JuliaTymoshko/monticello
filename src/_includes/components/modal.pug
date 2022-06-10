@@ -1,0 +1,7 @@
+mixin modal()
+  .c-modal.hidden#js-registration-modal
+    .c-modal__wrapper
+      .c-modal__container
+        +title-upline(class='upline')
+        h2(class='c-modal__notification' id='js-registration-notification')
+        +button({text:'Got it!', type: "button"})(class='button c-form__button js-registration-button' id='js-registration-ok')

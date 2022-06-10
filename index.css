@@ -1361,7 +1361,7 @@ template {
   font-size: 12px;
   font-weight: 700;
   padding: 5px 0 0 0;
-  opacity: 0.6;
+  opacity: 0.8;
 }
 
 .c-map {
@@ -1420,6 +1420,46 @@ template {
 .c-gallery__side img:hover {
   transform: scale(1.2);
   transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.c-modal {
+  z-index: 100;
+  position: fixed;
+  overflow: auto;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.c-modal__wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -200px;
+  margin-top: -10vh;
+}
+@media (max-width: 480px) {
+  .c-modal__wrapper {
+    margin-left: -150px;
+  }
+}
+.c-modal__container {
+  background-color: #fff;
+  padding: 30px 20px;
+  text-align: center;
+  min-width: 400px;
+}
+@media (max-width: 480px) {
+  .c-modal__container {
+    color: red;
+    font-size: 15px;
+    min-width: 300px;
+  }
+}
+
+.hidden {
+  display: none;
 }
 
 /*# sourceMappingURL=index.css.map */

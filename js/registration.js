@@ -5,6 +5,41 @@ const setError = (id, error) => {
   error ? el.classList.add('error') : el.classList.remove('error');
 };
 
+// ! f валидации firstName и LastName
+const validateNames = (fieldName, fieldNameValue) => {
+  let isValidField = true;
+  let errorField = DOM.getElementById(
+    `js-registration-form-${fieldName}-error`
+  );
+
+  if (!fieldNameValue) {
+    errorField.innerText = 'Please type in smth';
+    isValidField = false;
+  } else if (fieldNameValue.length <= 1) {
+    errorField.innerText = 'Should be 1+ characters';
+    isValidField = false;
+  } else if (fieldNameValue.length >= 30) {
+    errorField.innerText = 'Should be less than 30 characters';
+    isValidField = false;
+  } else if (fieldNameValue.search(/\d/) != -1) {
+    errorField.innerText = 'No numbers allowed.';
+    isValidField = false;
+  } else if (fieldNameValue.search(/[\,\.\$\%\+\}\{\^\-\*\/\&]/) != -1) {
+    errorField.innerText = 'No special characters allowed.';
+    isValidField = false;
+  }
+  return isValidField;
+};
+
+// ! Toggle modal window
+const modalWindow = DOM.getElementById('js-registration-modal');
+function toggleModal() {
+  modalWindow.classList.toggle('hidden');
+}
+const closeButton = DOM.getElementById('js-registration-ok');
+closeButton.addEventListener('click', toggleModal);
+
+// ! Registration f start
 const registration = (e) => {
   e.preventDefault();
 
@@ -26,84 +61,47 @@ const registration = (e) => {
   const password = form.get('password');
   setError(getElementIdByName('password'), !password);
 
-  // ! Проверка валидности полей
+  // ! Запуск f валидации
   let isFormValid = true;
 
-  // ! проверка firstName
-  const nameErrorField = DOM.getElementById(
-    'js-registration-form-firstName-error'
-  );
+  let isFirstNameValid = validateNames('firstName', firstName);
+  let isLastNameValid = validateNames('lastName', lastName);
 
-  if (!firstName) {
-    nameErrorField.innerText = 'Please type in your name';
+  // ! Проверка пустоты и валидности ДВУХ полей
+  if (
+    !isFirstNameValid ||
+    !isLastNameValid ||
+    email === '' ||
+    username === '' ||
+    password === ''
+  ) {
     isFormValid = false;
-  } else if (firstName.length <= 1) {
-    nameErrorField.innerText = 'Your name should be 1+ characters';
-    isFormValid = false;
-  } else if (firstName.length >= 30) {
-    nameErrorField.innerText = 'Your name less than 30 characters';
-    isFormValid = false;
-  } else if (firstName.search(/\d/) != -1) {
-    nameErrorField.innerText = 'No numbers allowed.';
-    isFormValid = false;
-  } else if (firstName.search(/[\,\.\&\%\+\}\{\^\-\*\/\&]/) != -1) {
-    nameErrorField.innerText = 'No special characters allowed.';
-    isFormValid = false;
-  } else {
-    // TODO: removeElement (nameErrorField.innerText)
-    // nameErrorField.remove
   }
 
+  // ! Проверка на вадидность формы, если нет - fetch не пойдет
   if (!isFormValid) {
     return;
   }
 
-  // ! проверка lastName
-  const lastNameErrorField = DOM.getElementById(
-    'js-registration-form-lastName-error'
-  );
-
-  if (!lastName) {
-    lastNameErrorField.innerText = 'Please type in your last name';
-    isFormValid = false;
-  } else if (lastName.length <= 1) {
-    lastNameErrorField.innerText = 'Your last name should be 1+ characters';
-    isFormValid = false;
-  } else if (lastName.length >= 50) {
-    lastNameErrorField.innerText = 'Your last name less than 50 characters';
-    isFormValid = false;
-  } else if (lastName.search(/\d/) != -1) {
-    lastNameErrorField.innerText = 'No numbers allowed.';
-    isFormValid = false;
-  } else if (lastName.search(/[\,\.\&\%\+\}\{\^\-\*\/\&]/) != -1) {
-    lastNameErrorField.innerText = 'No special characters allowed.';
-    isFormValid = false;
-  }
-
-  if (!isFormValid) {
-    return;
-  }
-
-  // ! Проверка пустоты
-  if (email === '' || username === '' || password === '') {
-    isFormValid = false;
-  }
-
-  if (!isFormValid) {
-    return;
-  }
-
-  // ! Собираем обьект на отправку
+  // ! Собираем обьект на отправку (we can trim() strings here as well)
   const body = {
     role: 2,
-    firstName: firstName.trim(),
-    lastName: lastName.trim(),
-    email: email.trim(),
-    username: username.trim(),
-    password: password.trim(),
+    firstName: firstName,
+    lastName: lastName,
+    email: email,
+    username: username,
+    password: password,
     disabledSeasonAnimation: true,
     language: 'ua',
   };
+
+  // ! Спросить Виталика
+
+  for (let key in body) {
+    if (typeof body[key] === 'string') {
+      body[key] = body[key].trim();
+    }
+  }
 
   // ! Send request - return выкенет из всей f и не пойдет дальше fetch. Но если будут необяз поля и из юзер оставит пустыми, все сломается
 
@@ -124,10 +122,33 @@ const registration = (e) => {
       // console.log(response.message); // ! message = object
       console.log(response.message['en']); // ! message = object
 
-      const emailErrorField = DOM.getElementById(
-        'js-registration-form-email-error'
-      );
-      emailErrorField.innerText = response.message['en'];
+      const showServerError = (fieldName) => {
+        let errorField = DOM.getElementById(
+          `js-registration-form-${fieldName}-error`
+        );
+        errorField.innerText = response.message['en'];
+      };
+
+      if (
+        response.message['en'] ===
+        'A user is already registered under this email'
+      ) {
+        showServerError('email');
+      }
+
+      if (response.message['en'] === 'This nickname is already taken') {
+        showServerError('username');
+      }
+
+      if (response.message['en'] === 'User added') {
+        const notificationArea = DOM.getElementById(
+          'js-registration-notification'
+        );
+
+        notificationArea.innerText = response.message['en'];
+
+        toggleModal();
+      }
     });
 
   // ! End of request (registration f)

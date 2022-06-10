@@ -1,7 +1,7 @@
 {
-  "name": "teamplate",
+  "name": "monticello",
   "version": "2.0.0",
-  "description": "Teamplate for development",
+  "description": "monticello development by beetroot student Julia Tymoshko",
   "main": "index.html",
   "repository": {
     "type": "git",
@@ -13,13 +13,13 @@
     "development",
     "beetroot"
   ],
-  "author": "solodkui arthur solodkuIA@gmail.com",
+  "author": "julia tymoshko tymoshko1997@gmail.com",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/solodkui/teamplate/issues"
   },
   "homepage": "https://github.com/solodkui/teamplate#readme",
-  "dependencies": {
-    "bootstrap": "^5.1.1"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
