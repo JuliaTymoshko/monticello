@@ -1,6 +1,7 @@
 // ! f валидации firstName и LastName
 const DOM = document;
-const EMAIL_REGEXP = /@.-_/;
+let REG =
+  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 const validateEmail = (fieldName, fieldNameValue) => {
   let isValidField = true;
@@ -11,7 +12,7 @@ const validateEmail = (fieldName, fieldNameValue) => {
   if (!fieldNameValue) {
     errorField.innerText = 'Please type your email';
     isValidField = false;
-  } else if (fieldNameValue.search(EMAIL_REGEXP) != -1) {
+  } else if (REG.test(String(fieldNameValue).toLowerCase()) != 1) {
     errorField.innerText = 'saaad';
     isValidField = false;
   }

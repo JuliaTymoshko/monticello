@@ -38,6 +38,16 @@ a:visited {
   color: inherit;
 }
 
+a[href^='x-apple-data-detectors:'] {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+// a[href^='x-apple-data-detectors:'] {
+//   color: initial;
+//   text-decoration: initial;
+// }
+
 li {
   list-style: none;
 }

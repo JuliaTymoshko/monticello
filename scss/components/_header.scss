@@ -6,7 +6,7 @@
     white-space: nowrap;
     gap: 20px;
     border-radius: 0 0 10px 10px;
-    z-index: 100;
+    z-index: 99;
 
     @media (max-width: $bp-desktop) {
       align-items: flex-start;
