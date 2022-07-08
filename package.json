@@ -5,20 +5,22 @@
   "main": "index.html",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/solodkui/teamplate.git"
+    "url": "git+https://github.com/JuliaTymoshko/monticello.git"
   },
   "keywords": [
-    "teamplate",
     "student",
     "development",
-    "beetroot"
+    "beetroot",
+    "julia",
+    "tymoshko",
+    "portfolio"
   ],
   "author": "julia tymoshko tymoshko1997@gmail.com",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/solodkui/teamplate/issues"
+    "url": "https://github.com/JuliaTymoshko/monticello/issues "
   },
-  "homepage": "https://github.com/solodkui/teamplate#readme",
+  "homepage": "https://github.com/JuliaTymoshko/monticello#readme",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   }
