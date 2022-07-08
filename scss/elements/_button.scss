@@ -8,8 +8,11 @@
   text-transform: uppercase;
   text-align: center;
   cursor: pointer;
+  color: $c-black;
+  font-weight: $fw-normal;
 
   &:hover {
     text-decoration: underline;
+    color: $c-black;
   }
 }

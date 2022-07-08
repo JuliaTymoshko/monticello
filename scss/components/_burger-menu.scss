@@ -10,6 +10,14 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
 
+  a {
+    color: $c-white;
+  }
+
+  a:visited {
+    color: $c-white;
+  }
+
   &__wrapper {
     color: $c-white;
     padding: 30px 20px;
@@ -26,6 +34,8 @@
   }
 
   &__navigation {
+    color: $c-white;
+    font-weight: $fw-normal;
     max-width: 300px;
     display: flex;
     flex-direction: column;

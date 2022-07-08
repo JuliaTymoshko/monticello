@@ -364,10 +364,6 @@ a:active {
   opacity: 0.5;
 }
 
-a:visited {
-  color: inherit;
-}
-
 a[href^="x-apple-data-detectors:"] {
   color: inherit;
   text-decoration: inherit;
@@ -768,9 +764,12 @@ template {
   text-transform: uppercase;
   text-align: center;
   cursor: pointer;
+  color: #000;
+  font-weight: 400;
 }
 .button:hover {
   text-decoration: underline;
+  color: #000;
 }
 
 .circle {
@@ -1512,6 +1511,12 @@ template {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
 }
+.c-burger-menu a {
+  color: #ffffff;
+}
+.c-burger-menu a:visited {
+  color: #ffffff;
+}
 .c-burger-menu__wrapper {
   color: #ffffff;
   padding: 30px 20px;
@@ -1526,6 +1531,8 @@ template {
   margin-bottom: 30px;
 }
 .c-burger-menu__navigation {
+  color: #ffffff;
+  font-weight: 400;
   max-width: 300px;
   display: flex;
   flex-direction: column;

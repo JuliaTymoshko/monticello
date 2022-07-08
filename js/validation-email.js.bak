@@ -13,7 +13,7 @@ const validateEmail = (fieldName, fieldNameValue) => {
     errorField.innerText = 'Please type your email';
     isValidField = false;
   } else if (REG.test(String(fieldNameValue).toLowerCase()) != 1) {
-    errorField.innerText = 'Please use your valid email';
+    errorField.innerText = 'saaad';
     isValidField = false;
   }
   return isValidField;
